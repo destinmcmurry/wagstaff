@@ -25,11 +25,18 @@ Use at least sequelize, express, react, and redux when creating this app. You ca
 ### DB Design
 
 - Students
-  * have profile info (e.g. name and email)
+  * have profile info including firstName, lastName, email, and gpa
+  * firstName and lastName should not be empty or null
+    * should have a virtual 'name' field which is the concatenation of firstName and lastName
+  * email should not be null and should ensure valid email
+  * gpa should be a float (decimal) between 0.0 and 4.0
   * must be assigned to a campus
 
 - Campuses
-  * have info such as a name and image
+  * have info such as a name, imageUrl, and description
+  * name should not be allowed to be empty or null
+  * imageUrl should have a default value
+  * description should allow an extremely large description
   * can have many students assigned (may have none)
 
 ### Views and Functionality
