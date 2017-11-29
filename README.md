@@ -8,9 +8,8 @@ Make a thing!
 2. *Set the name of your project in `package.json`*. The skeleton intentionally ships with an invalid name.
 3. `npm install`
 4. Check out the mock-view in the `wireframes` folder
-5. Start the build process with: `npm run build-watch`
-6. In another terminal, start your app with `npm start`
-7. If you navigate to the URL you should see some UI already :) [We already have some connection code to get you started]
+5. Start the build process and your application with: `npm run start:dev`
+6. If you navigate to the URL you should see some UI already :) [We already have some connection code to get you started]
 
 ## Requirements
 
@@ -20,23 +19,26 @@ You are the CTO of the Margaret Hamilton Interplanetary Academy of JavaScript. C
 
 ### The tools
 
-Use at least sequelize, express, react, and redux when creating this app. You can incorporate any additional libraries or tools you wish.
+Use at least Sequelize, Express and React when creating this app. This app is small, so just using React is reasonable, but note that without practicing with more frontend libraries you will have a steep learning curve in senior phase. If you are going forward with ***just React*** you will benefit from **deleting all references to React-Redux, Redux and React-Router** (so you don't confuse yourself with trying to use something in half your files and not the other half). 
+
+If you feel ready, start by incorporating React-Router, Redux and React-Redux (we helped get you started with this!)! If you go this route, it will be great practice and will prepare you **well** for senior phase.
 
 ### DB Design
 
 - Students
-  * have profile info including firstName, lastName, email, and gpa
-  * firstName and lastName should not be empty or null
-    * should have a virtual 'name' field which is the concatenation of firstName and lastName
-  * email should not be null and should ensure valid email
-  * gpa should be a float (decimal) between 0.0 and 4.0
+  * have profile info including:
+    * firstName - not empty or null
+    * lastName - not empty or null
+    * email - not empty or null; valid email
+    * gpa - decimal between 0.0 and 4.0
+  * must have a virtual 'name' field which is the concatenation of firstName and lastName
   * must be assigned to a campus
 
 - Campuses
-  * have info such as a name, imageUrl, and description
-  * name should not be allowed to be empty or null
-  * imageUrl should have a default value
-  * description should allow an extremely large description
+  * have profile info including:
+    * name - not empty or null
+    * imageUrl - default value
+    * description - extremely large text
   * can have many students assigned (may have none)
 
 ### Views and Functionality
@@ -106,9 +108,10 @@ DELETE
 ### Video Walkthrough
 Please submit a 3-minute screencast of a walk-through of the functionality *and code* for each user story in your app. E.g. for "As a user, I can create a campus", please show us that you can successfully create a campus in your app, and also the actual code that is involved in doing that (from the front-end components to the backend routes and models). We recommend using Quicktime to record the screencast (instructions on how to do that [here](https://support.apple.com/kb/PH5882?locale=en_US&viewlocale=en_US)).
 
-Once you've recorded your screencast, please *upload it to YouTube as an unlisted video*, and send us the link. This will aid us in evaluating your submission.
+Once you've recorded your screencast, please *upload it to YouTube as an unlisted video*. Email `academics@fullstackacademy.com` with the title `Senior Enrichment Submission: [Your Name]` and include your repo link and YouTube recording link. This will aid us in evaluating your submission.
 
 ## Evaluation
+[Rubric](https://docs.google.com/document/d/1dphc4c86ZnKSflcabEDe2XWPswWf77SNoof70MY37yI)
 
 - Code modularity/readability (25%)
 - Models (25%)
