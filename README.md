@@ -15,7 +15,7 @@ Make a thing!
 
 ### The Premise
 
-You are the CTO of the Margaret Hamilton Interplanetary Academy of JavaScript. Create a RESTful web platform that allows you to manage your students and campuses.
+You are the CTO of the Margaret Hamilton Interplanetary Academy of JavaScript. Create a RESTful web platform that allows you to manage your students and campuses. Before getting started, please carefully review the expectations as outlined in the [grading rubric](https://docs.google.com/document/d/1X5FekpyZqAiTmSU0ipAAHTGyIoInC-m-1a75YkMcejM).
 
 ### The tools
 
@@ -23,49 +23,11 @@ Use at least Sequelize, Express and React when creating this app. This app is sm
 
 If you feel ready, start by incorporating React-Router, Redux and React-Redux (we helped get you started with this!)! If you go this route, it will be great practice and will prepare you **well** for senior phase.
 
-### DB Design
-
-- Students
-  * have profile info including:
-    * firstName - not empty or null
-    * lastName - not empty or null
-    * email - not empty or null; valid email
-    * gpa - decimal between 0.0 and 4.0
-  * must have a virtual 'name' field which is the concatenation of firstName and lastName
-  * must be assigned to a campus
-
-- Campuses
-  * have profile info including:
-    * name - not empty or null
-    * imageUrl - default value
-    * description - extremely large text
-  * can have many students assigned (may have none)
-
 ### Views and Functionality
-#### See Wireframes folder for visual
 
-- Navigation: as a user I...
-  * will land on **Home** by default
-  * can navigate to **Campuses** from **Home**
-  * can navigate to **Students** from **Home**
-  * can navigate to view a **Single Campus** from **Campuses**
-  * can navigate to view a **Single Student** from **Students**
-  * can navigate to view a **Single Student** from **Single Campus** (for any student at that campus)
-  * can navigate to view that student's **Single Campus** from **Single Student**
+See wireframes folder as a reference for how your front-end could look. You are, of course, encouraged to flex your own design muscles if you so wish, but the wireframes should function as a good baseline idea.
 
-- Views: as a user I...
-  * see a list of all campuses on the **Campuses** view
-  * see a list of all students on the **Students** view
-  * see details about a campus on the **Single Campus** view, including that campus's students
-  * see details about a student on the **Single Student** view, including that student's campus
-
-- Actions: as a user I...
-  * can create a campus
-  * can edit a campus's info, including adding/removing a student to/from that campus
-  * can delete a campus
-  * can create a student
-  * can edit a student's info, including the campus that student is assigned to
-  * can delete a student
+Please also carefully review the user story expectations in the [rubric](https://docs.google.com/document/d/1X5FekpyZqAiTmSU0ipAAHTGyIoInC-m-1a75YkMcejM), as completing the user stories is the most heavily weighted part of the project (because the most important thing is that it works, right?!).
 
 ### Routes
 
@@ -95,6 +57,24 @@ DELETE
 - a student
 ```
 
+### DB Design
+
+- Students
+  * have profile info including:
+    * firstName - not empty or null
+    * lastName - not empty or null
+    * email - not empty or null; valid email
+    * gpa - decimal between 0.0 and 4.0
+  * must have a virtual 'name' field which is the concatenation of firstName and lastName
+  * must be assigned to a campus
+
+- Campuses
+  * have profile info including:
+    * name - not empty or null
+    * imageUrl - default value
+    * description - extremely large text
+  * can have many students assigned (may have none)
+
 ### How to test functionality without a frontend
 - GET: use your browser
 - POST / PUT / DELETE : 
@@ -111,11 +91,9 @@ Please submit a 5 to 10 minute screencast of a walk-through of the functionality
 Once you've recorded your screencast, please *upload it to YouTube as an unlisted video*. Email `academics@fullstackacademy.com` with the title `Senior Enrichment Submission: [Your Name]` and include your repo link and YouTube recording link. This will aid us in evaluating your submission.
 
 ## Evaluation
-[Rubric](https://docs.google.com/document/d/1dphc4c86ZnKSflcabEDe2XWPswWf77SNoof70MY37yI)
+[Rubric](https://docs.google.com/document/d/1X5FekpyZqAiTmSU0ipAAHTGyIoInC-m-1a75YkMcejM)
 
-- Code modularity/readability (25%)
-- Models (25%)
-- Routes (25%)
-- Frontend logic and functionality (25%)
-- Design + Bonus features (up to 10 Extra Credit points)
+- User stories (70%)
+- Rubric score (30%)
+- Extra credit (15% max)
 
