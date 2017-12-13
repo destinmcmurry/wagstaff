@@ -93,7 +93,7 @@ Once you've recorded your screencast, please *upload it to YouTube as an unliste
 ## Evaluation
 [Rubric](https://docs.google.com/document/d/1X5FekpyZqAiTmSU0ipAAHTGyIoInC-m-1a75YkMcejM)
 
-- User stories (70%)
-- Rubric score (30%)
+- User stories (60%)
+- Rubric score (40%)
 - Extra credit (15% max)
 
