@@ -25,9 +25,9 @@ If you feel ready, start by incorporating React-Router, Redux and React-Redux (w
 
 ### Views and Functionality
 
-See wireframes folder as a reference for how your front-end could look. You are, of course, encouraged to flex your own design muscles if you so wish, but the wireframes should function as a good baseline idea.
+Take a look in the wireframes folder as a reference for how your front-end could look. Of course, you are encouraged to be creative and flex your own design muscles, but the wireframes should function as a good baseline/inspirational resource.
 
-Please also carefully review the user story expectations in the [rubric](https://docs.google.com/document/d/1X5FekpyZqAiTmSU0ipAAHTGyIoInC-m-1a75YkMcejM), as completing the user stories is the most heavily weighted part of the project (because the most important thing is that it works, right?!).
+Once again, please carefully review the user story expectations in the [rubric](https://docs.google.com/document/d/1X5FekpyZqAiTmSU0ipAAHTGyIoInC-m-1a75YkMcejM), as completing the user stories is the most heavily weighted part of the project.
 
 ### Routes
 
