@@ -3,7 +3,7 @@ import { combineReducers } from 'redux'
 
 const initialState = {}
 
-const rootReducer = function(state = initialState, action) {
+const rootReducer = (state = initialState, action) => {
   switch(action.type) {
     default: return state
   }
