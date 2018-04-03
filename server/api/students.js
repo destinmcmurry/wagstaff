@@ -2,6 +2,13 @@ const apiRouter = require('express').Router();
 const { Student } = require('../db/models/index');
 const Sequelize = require('sequelize');
 
+apiRouter.get('/:id', (req, res, next) => {
+  const studentId = req.params.id;
+  Student.findById(studentId)
+    .then(student => res.json(student))
+    .catch(next);
+})
+
 apiRouter.get('/', (req, res, next) => {
   Student.findAll()
   .then(students => res.json(students))
