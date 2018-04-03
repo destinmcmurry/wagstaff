@@ -1,41 +1,24 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import store from '../store';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import Navbar from './Navbar';
 import Homerooms from './Homerooms';
-import { fetchHomerooms } from '../reducers/homerooms';
+import Students from './Students';
 
-class Main extends Component {
-
-  componentDidMount () {
-    this.props.fetchHomerooms();
-    console.log('mounted!');
-  }
+export default class Main extends Component {
 
   render() {
     return (
-      <div>
-        <nav>
-          <h1>Wagstaff Elementary</h1>
-        </nav>
-        <Homerooms homerooms={this.props.homerooms}/>
-      </div>
+        <div>
+          <Navbar />
+          <main>
+            <Switch>
+              <Route exact path='/homerooms' component={Homerooms}/>
+              <Route exact path='/students' component={Students}/>
+              <Redirect to='/homerooms' />
+            </Switch>
+          </main>
+        </div>
     )
   }
 
 }
-
-const mapState = (state, ownProps) => {
-  return {
-    homerooms: state.homerooms,
-  }
-}
-
-const mapDispatch = dispatch => {
-  return {
-    fetchHomerooms() {
-      dispatch(fetchHomerooms())
-    }
-  }
-}
-
-export default connect(mapState, mapDispatch)(Main);

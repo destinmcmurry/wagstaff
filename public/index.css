@@ -1,10 +1,17 @@
-
-nav h1 {
-  padding: 15px;
-  background-color: orange;
+* {
+  box-sizing: border-box;
   font-family: Georgia;
-  font-size: 30px;
+}
+
+#navbar {
+  font-size: 25px;
+  padding: 10px;
+  background-color: orange;
   color: white;
+}
+
+#nav-links {
+  font-size: 25px;
 }
 
 ul {
