@@ -1,0 +1,18 @@
+
+nav h1 {
+  padding: 15px;
+  background-color: orange;
+  font-family: Georgia;
+  font-size: 30px;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  width : calc(25% - 12px);
+	margin: 5px;
+	border-radius : 5px;
+}
