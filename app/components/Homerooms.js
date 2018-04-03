@@ -20,7 +20,6 @@ class Homerooms extends Component {
                   <img src={homeroom.teacherImg} />
                   <h1>{homeroom.teacher}'s Class</h1>
                   <h4>Room {homeroom.roomNumber}</h4>
-                  <p>{homeroom.description}</p>
                 </li>
               )
             })

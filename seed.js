@@ -78,7 +78,7 @@ const students = [
     {
       firstName: 'Millie',
       lastName: 'Frock',
-      studentImg: '/images/Louise-Belcher.jpg',
+      studentImg: '/images/Millie-Frock.jpg',
       gpa: 4.0,
       homeroomId: 2
     },
@@ -87,13 +87,6 @@ const students = [
       lastName: 'Rudy',
       studentImg: '/images/Regular-Rudy.jpg',
       gpa: 3.9,
-      homeroomId: 2
-    },
-    {
-      firstName: 'Louise',
-      lastName: 'Belcher',
-      studentImg: '/images/Louise-Belcher.jpg',
-      gpa: 3.8,
       homeroomId: 2
     },
     {
