@@ -1,5 +1,4 @@
-const db = require('./server/db/index');
-const models = require('./server/db/models/index');
+const { db, Homeroom, Student } = require('./server/db/models/index');
 
 const homerooms =
   [
@@ -126,11 +125,11 @@ const students = [
 
   const seedHomerooms = () =>
     Promise.all(homerooms.map(homeroom => 
-      models.Homeroom.create(homeroom)));
+      Homeroom.create(homeroom)));
 
   const seedStudents = () =>
     Promise.all(students.map(student =>
-      models.Student.create(student)));
+      Student.create(student)));
 
   db.sync()
     .then(() => {

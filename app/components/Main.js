@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Main = (props) => {
-  return (
-    <h1>Hey</h1>
-  )
-}
+class Main extends Component {
+
+  render() {
+    return (
+      <h1>Hey</h1>
+    )
+  }
+
+} 
 
 export default Main;
