@@ -10,6 +10,11 @@
   color: white;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 #nav-links {
   font-size: 25px;
 }
