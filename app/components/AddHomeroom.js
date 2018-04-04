@@ -29,7 +29,15 @@ class AddHomeroom extends Component {
 
 
     return (
-      <form onSubmit={event => handleSubmit(this.state, event)}>
+      <form onSubmit={event => {
+          handleSubmit(this.state, event)
+          this.setState({
+            dirties: { teacher: false, roomNumber: false },
+            teacher: '',
+            roomNumber: '',
+            teacherImg: ''
+          })
+        }}>
         Teacher Name:
         <br/>
         <input type='text' name='teacher' value={this.state.teacher} onChange={this.handleChange}/>
@@ -58,6 +66,7 @@ const mapState = null;
 const mapDispatch = (dispatch) => {
   return {
     handleSubmit (form, event) {
+      if (!form.teacherImg) { form.teacherImg = '/images/blank.png' }
       event.preventDefault()
       dispatch(postHomeroom(form));
     }

@@ -32,7 +32,17 @@ class AddStudent extends Component {
     const { handleSubmit, homeroomId } = this.props;
 
     return (
-      <form onSubmit={event => handleSubmit(this.state, event, homeroomId)}>
+      <form onSubmit={event => {
+          handleSubmit(this.state, event, homeroomId)
+          this.setState({
+            dirties: { firstName: false, lastName: false, gpa: false },
+            firstName: '',
+            lastName: '',
+            gpa: '',
+            studentImg: '',
+            diabled: true
+          })
+        }}>
         First Name:
         <br/>
         <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange}/>
@@ -66,6 +76,7 @@ const mapState = null;
 const mapDispatch = (dispatch) => {
   return {
     handleSubmit (form, event, homeroomId) {
+      if (!form.studentImg) { form.studentImg = '/images/blank.png' }
       event.preventDefault()
       dispatch(postStudent({...form, homeroomId }));
     }
