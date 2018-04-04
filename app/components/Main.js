@@ -25,8 +25,8 @@ class Main extends Component {
             <Switch>
               <Route exact path='/homerooms' component={Homerooms}/>
               <Route exact path='/students' component={Students}/>
-              <Route path='/students/:id' component={SingleStudent}/>
-              <Route path='/homerooms/:id' component={SingleHomeroom}/>
+              <Route path='/students/:studentId' component={SingleStudent}/>
+              <Route path='/homerooms/:homeroomId' component={SingleHomeroom}/>
               <Redirect to='/homerooms'/>
             </Switch>
           </main>

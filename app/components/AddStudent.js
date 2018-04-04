@@ -10,6 +10,7 @@ class AddStudent extends Component {
       firstName: '',
       lastName: '',
       gpa: '',
+      studentImg: ''
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -22,10 +23,10 @@ class AddStudent extends Component {
 
   render() {
 
-    const { handleSubmit } = this.props;
+    const { handleSubmit, homeroomId } = this.props;
 
     return (
-      <form onSubmit={event => handleSubmit(this.state, event)}>
+      <form onSubmit={event => handleSubmit(this.state, event, homeroomId)}>
         First Name:
         <br/>
         <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange}/>
@@ -37,6 +38,10 @@ class AddStudent extends Component {
         gpa:
         <br/>
         <input type='text' name='gpa' value={this.state.gpa} onChange={this.handleChange}/>
+        <br/>
+        Image Url:
+        <br/>
+        <input type='text' name='studentImg' value={this.state.studentImg} onChange={this.handleChange}/>
         <br/>
         <br/>
         <input type='submit' value='Submit'/>
@@ -50,9 +55,9 @@ const mapState = null;
 
 const mapDispatch = (dispatch) => {
   return {
-    handleSubmit (form, event) {
+    handleSubmit (form, event, homeroomId) {
       event.preventDefault()
-      dispatch(postStudent(form));
+      dispatch(postStudent({...form, homeroomId }));
     }
   }
 }
