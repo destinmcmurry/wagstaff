@@ -39,14 +39,14 @@ class AddHomeroom extends Component {
         <br/>
         <input type='text' name='roomNumber' value={this.state.roomNumber} onChange={this.handleChange}/>
         { this.state.dirties.roomNumber && !this.state.roomNumber ? <div className="alert-warning">Please enter a room number</div> : null }
-        { this.state.roomNumber && (this.state.roomNumber.length > 3) ? <div className="alert-warning">Sorry, that's not a valid room number</div> : null }
+        { this.state.roomNumber && (this.state.roomNumber.length > 3) ? <div className="alert-warning">Please enter a valid room number</div> : null }
         <br/>
         Image Url:
         <br/>
         <input type='text' name='teacherImg' value={this.state.teacherImg} onChange={this.handleChange}/>
         <br/>
         <br/>
-        <input type='submit' value='Submit'/>
+        <button type='submit' id='add-btn'>Add Homeroom</button>
       </form>
     )
   }
