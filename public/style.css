@@ -19,8 +19,9 @@ a {
   color: black;
 }
 
-a:hover {
-  color: orange;
+a:hover div {
+  background-color: orange;
+  color: white;
 }
 
 #nav-links {
