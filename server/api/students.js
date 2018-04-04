@@ -15,4 +15,10 @@ apiRouter.get('/', (req, res, next) => {
   .catch(next);
 });
 
+apiRouter.post('/', (req, res, next) => {
+  return Student.create(req.body)
+    .then(createdStudent => res.json(createdStudent))
+    .catch(next)
+});
+
 module.exports = apiRouter;

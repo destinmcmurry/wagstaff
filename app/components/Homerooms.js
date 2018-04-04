@@ -26,7 +26,7 @@ const Homerooms = (props) => {
         }
       </ul>
       <br/>
-      <div id='homeroom-form'>
+      <div id='footer-form'>
         <h3>New Homeroom</h3>
         <AddHomeroom />
       </div>
