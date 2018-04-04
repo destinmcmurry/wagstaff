@@ -11,7 +11,7 @@ const SingleStudent = (props) => {
     {
       studentArr.map(student => {
         return (
-          <div id='single-student'>
+          <div key={student.id} id='single-student'>
             <img src={student.studentImg} />
             <h1>{student.name}</h1>
             <h4>{student.email}</h4>
@@ -20,6 +20,7 @@ const SingleStudent = (props) => {
           )
         })
       }
+      <button id='delete-btn'> ❌ Delete </button>
     </div>
   )
 

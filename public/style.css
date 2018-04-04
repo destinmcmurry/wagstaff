@@ -24,6 +24,11 @@ a:hover div {
   color: white;
 }
 
+ul div {
+  padding: 10px;
+  border-radius: 5px;
+}
+
 #nav-links {
   font-size: 25px;
 }
@@ -61,4 +66,13 @@ img {
 #add-btn {
   font-size: 15px;
   border-radius: 5px;
+}
+
+#delete-btn {
+  text-align: center;
+  font-size: 25px;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 25px;
+  float: right;
 }

@@ -14,8 +14,8 @@ const Homerooms = (props) => {
         {
           homerooms.map(homeroom => {
             return (
-              <div>
-                <li key={homeroom.id} className='homeroom-block'>
+              <div key={homeroom.id}>
+                <li className='homeroom-block'>
                   <NavLink to={`/homerooms/${homeroom.id}`}>
                   <img src={homeroom.teacherImg} />
                     <div className='block'>

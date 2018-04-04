@@ -45,4 +45,16 @@ export const postHomeroom = homeroom => {
   }
 }
 
+export const deleteHomeroom = homeroom => {
+
+  return dispatch => {
+    axios.delete('/api/homerooms/:id', homeroom)
+    .then(res => res.data)
+    .then(homeroom => {
+      dispatch(deleteHomeroom(homeroom))
+    })
+    .catch(console.error);
+  }
+}
+
 export default homeroomsReducer;

@@ -13,8 +13,8 @@ const Students = (props) => {
         {
           students.map(student => {
             return (
-              <div>
-                <li key={student.id} className='student-block'>
+              <div key={student.id}>
+                <li className='student-block'>
                   <NavLink to={`/students/${student.id}`}>
                     <img src={student.studentImg} />
                     <div className='block'>
