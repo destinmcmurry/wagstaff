@@ -1,27 +1,42 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { postHomeroom } from '../reducers/homerooms';
 
-export default class AddHomeroom extends Component {
+class AddHomeroom extends Component {
 
-  // how connect to store ... 
-  // because it was said in this class forms should be smart
-  // so should it have local state? 
-  // or should i add a 'newhomeroom' field to the store state?
+  constructor(props) {
+    super(props)
+    this.state = {
+      teacher: '',
+      roomNumber: '',
+      teacherImg: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange (event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
 
   render() {
+
+    const { handleSubmit } = this.props;
+
     return (
-      <form>
+      <form onSubmit={event => handleSubmit(this.state, event)}>
         Teacher Name:
         <br/>
-        <input type='text' teacher='teacher'/>
+        <input type='text' name='teacher' value={this.state.teacher} onChange={this.handleChange}/>
         <br/>
         Room Number:
         <br/>
-        <input type='text' roomNumber='roomNumber'/>
+        <input type='text' name='roomNumber' value={this.state.roomNumber} onChange={this.handleChange}/>
         <br/>
         Image Url:
         <br/>
-        <input type='text' teacherImg='teacherImg'/>
+        <input type='text' name='teacherImg' value={this.state.teacherImg} onChange={this.handleChange}/>
         <br/>
         <br/>
         <input type='submit' value='Submit'/>
@@ -30,3 +45,16 @@ export default class AddHomeroom extends Component {
   }
 
 }
+
+const mapState = null;
+
+const mapDispatch = (dispatch) => {
+  return {
+    handleSubmit (form, event) {
+      event.preventDefault()
+      dispatch(postHomeroom(form));
+    }
+  }
+}
+
+export default connect(mapState, mapDispatch)(AddHomeroom);

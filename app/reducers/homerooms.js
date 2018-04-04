@@ -33,7 +33,7 @@ export const fetchHomerooms = () => {
   }
 }
 
-export const postHomeroom = (homeroom) => {
+export const postHomeroom = homeroom => {
 
   return dispatch => {
     axios.post('/api/homerooms', homeroom)

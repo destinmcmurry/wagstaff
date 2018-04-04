@@ -10,14 +10,14 @@ const homerooms =
       // 8th grade 
     },
     {
-      teacher: 'Ms LaBonz',
+      teacher: 'Ms. LaBonz',
       teacherImg: '/images/Ms-LaBonz.jpg',
       roomNumber: '305',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non velit est. Nulla facilisi. Fusce mollis efficitur ex a dignissim. Phasellus eu lacus et diam consectetur eleifend vel nec nibh. Vestibulum volutpat augue eget odio faucibus scelerisque. Ut vehicula posuere neque sit amet molestie. Donec ac porttitor nisi. Morbi molestie turpis quis massa varius, id porttitor sem tristique.'
       // 4th grade
     },
     {
-      teacher: 'Ms Twitchell',
+      teacher: 'Ms. Twitchell',
       teacherImg: '/images/Ms-Twitchell.jpg',
       roomNumber: '201',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non velit est. Nulla facilisi. Fusce mollis efficitur ex a dignissim. Phasellus eu lacus et diam consectetur eleifend vel nec nibh. Vestibulum volutpat augue eget odio faucibus scelerisque. Ut vehicula posuere neque sit amet molestie. Donec ac porttitor nisi. Morbi molestie turpis quis massa varius, id porttitor sem tristique.'
