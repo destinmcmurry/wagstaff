@@ -7,6 +7,7 @@ class AddHomeroom extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      dirties: { teacher: false, roomNumber: false },
       teacher: '',
       roomNumber: '',
       teacherImg: ''
@@ -15,6 +16,8 @@ class AddHomeroom extends Component {
   }
 
   handleChange (event) {
+    if (event.target.name === 'teacher') this.setState({dirties: { teacher: true }})
+    if (event.target.name === 'roomNumber') this.setState({dirties: { roomNumber: true }})
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -24,15 +27,19 @@ class AddHomeroom extends Component {
 
     const { handleSubmit } = this.props;
 
+
     return (
       <form onSubmit={event => handleSubmit(this.state, event)}>
         Teacher Name:
         <br/>
         <input type='text' name='teacher' value={this.state.teacher} onChange={this.handleChange}/>
+        { this.state.dirties.teacher && !this.state.teacher ? <div className="alert-warning">Please enter a teacher</div> : null }
         <br/>
         Room Number:
         <br/>
         <input type='text' name='roomNumber' value={this.state.roomNumber} onChange={this.handleChange}/>
+        { this.state.dirties.roomNumber && !this.state.roomNumber ? <div className="alert-warning">Please enter a room number</div> : null }
+        { this.state.roomNumber && (this.state.roomNumber.length > 3) ? <div className="alert-warning">Sorry, that's not a valid room number</div> : null }
         <br/>
         Image Url:
         <br/>

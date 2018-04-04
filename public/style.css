@@ -46,3 +46,9 @@ img {
 #single-student {
   text-align: center;
 }
+
+.alert-warning {
+  color: red;
+  font-family: sans-serif;
+  font-size: 12px;
+}

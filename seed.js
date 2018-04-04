@@ -49,14 +49,14 @@ const students = [
     },
     {
       firstName: 'Jocelyn',
-      lastName: '(n/a)',
+      lastName: 'Unclear',
       studentImg: '/images/Jocelyn.png',
       gpa: 3.3,
       homeroomId: 1
     },
     {
       firstName: 'Zeke',
-      lastName: '(n/a)',
+      lastName: 'Unclear',
       studentImg: '/images/Zeke.png',
       gpa: 2.5,
       homeroomId: 1
@@ -124,7 +124,7 @@ const students = [
     Promise.all(students.map(student =>
       Student.create(student)));
 
-  db.sync()
+  db.sync({force: true})
     .then(() => {
       console.log('Seeding homerooms');
       return seedHomerooms()
