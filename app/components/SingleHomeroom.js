@@ -13,8 +13,7 @@ const SingleHomeroom = (props) => {
   return (
     <div>
       <ul> 
-        {
-          students.map(student => {
+        { students.map(student => {
             return (
               <li key={student.id} className='student-block'>
               <NavLink to={`/students/${student.id}`}>
@@ -27,6 +26,7 @@ const SingleHomeroom = (props) => {
             )
           })
         }
+        { students && !students.length && <small>There are no students in this homeroom yet.</small>}
       </ul>
       <br/>
       <div id='footer-form'>
