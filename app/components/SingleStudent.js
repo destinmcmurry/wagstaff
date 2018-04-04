@@ -4,17 +4,15 @@ import store from '../store';
 
 const SingleStudent = (props) => {
 
-  const { students } = props;
-
-  const wantedId = Number(props.match.params.id);
-  const studentArr = students.filter(student => student.id === wantedId);
-  const student = studentArr[0] || {};
-
-  console.log('student we got ->', student);
+  const student = props.students.filter(student => student.id === Number(props.match.params.id))
+  const stu = student[0] || {};
 
   return (
-    <div> 
-      <h1>{student.name}</h1>
+    <div id='single-student'> 
+      <img src={stu.studentImg} />
+      <h1>{stu.name}</h1>
+      <h4>{stu.email}</h4>
+      <p>gpa: {stu.gpa}</p>
     </div>
   )
 
@@ -23,6 +21,7 @@ const SingleStudent = (props) => {
 const mapState = (state, ownProps) => {
   return {
     students: state.students
+    // wait does it have access to the props match params id ?
   }
 }
 
