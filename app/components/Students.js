@@ -1,33 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import store from '../store';
-import { fetchStudents } from '../reducers/students';
 
-class Students extends Component {
+const Students = (props) => {
 
-  componentDidMount() {
-    this.props.fetchStudents();
-  }
+  const { students } = props;
 
-  render() {
-    return (
-      <div>
-        <ul>
-          {
-            this.props.students.map(student => {
-              return (
-                <li key={student.id} className='student-block'>
+  return (
+    <div>
+      <ul>
+        {
+          students.map(student => {
+            return (
+              <li key={student.id} className='student-block'>
+                <NavLink to={`/students/${student.id}`}>
                   <img src={student.studentImg} />
                   <h1>{student.name}</h1>
+                  <h4>{student.email}</h4>
                   <p>gpa: {student.gpa}</p>
-                </li>
-              )
-            })
-          }
-        </ul>
-      </div>
-    )
-  }
+                </NavLink>
+              </li>
+            )
+          })
+        }
+      </ul>
+    </div>
+  )
 
 }
 
@@ -37,12 +36,4 @@ const mapState = (state, ownProps) => {
   }
 }
 
-const mapDispatch = dispatch => {
-  return {
-    fetchStudents() {
-      dispatch(fetchStudents())
-    }
-  }
-}
-
-export default connect(mapState, mapDispatch)(Students);
+export default connect(mapState)(Students);

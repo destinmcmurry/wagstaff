@@ -10,9 +10,13 @@
   color: white;
 }
 
-a {
+#navbar a {
   color: white;
+}
+
+a {
   text-decoration: none;
+  color: black;
 }
 
 #nav-links {
@@ -28,4 +32,13 @@ img {
   width : calc(25% - 12px);
 	margin: 5px;
 	border-radius : 5px;
+}
+
+#homeroom-form {
+  width: 100%;
+  color: white;
+  padding: 20px 40px;
+  background-color: orange;
+  float: right;
+  text-align: right;
 }
