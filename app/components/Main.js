@@ -7,6 +7,7 @@ import Students from './Students';
 import SingleStudent from './SingleStudent';
 import SingleHomeroom from './SingleHomeroom';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import store from '../store';
 import { fetchStudents } from '../reducers/students';
 import { fetchHomerooms } from '../reducers/homerooms';
@@ -38,13 +39,6 @@ class Main extends Component {
 
 }
 
-const mapState = (state, ownProps) => {
-  return {
-    homerooms: state.homerooms,
-    students: state.students
-  }
-}
-
 const mapDispatch = dispatch => {
   return {
     fetchStudents() {
@@ -56,4 +50,6 @@ const mapDispatch = dispatch => {
   }
 }
 
-export default connect(mapState, mapDispatch)(Main);
+export default withRouter(
+  connect(null, mapDispatch)(Main)
+);

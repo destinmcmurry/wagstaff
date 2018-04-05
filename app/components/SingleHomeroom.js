@@ -61,7 +61,7 @@ const mapState = (state, ownProps) => {
 const mapProps = (dispatch, ownProps) => {
   return {
     handleClick(homeroomId) {
-      dispatch(destroyHomeroom(homeroomId), ownProps.history);
+      dispatch(destroyHomeroom(homeroomId, ownProps.history));
     }
   }
 }

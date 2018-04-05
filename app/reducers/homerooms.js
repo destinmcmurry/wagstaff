@@ -3,10 +3,12 @@ import axios from 'axios';
 // action types
 const SET_HOMEROOMS = 'SET_HOMEROOMS';
 const ADD_HOMEROOM = 'ADD_HOMEROOM';
+const DELETE_HOMEROOM = 'DELETE_HOMEROOM';
 
 // action creators
 export const setHomerooms = homerooms => ({ type: SET_HOMEROOMS, homerooms });
-export const addHomeroom = homeroom => ({ type: ADD_HOMEROOM, homeroom })
+export const addHomeroom = homeroom => ({ type: ADD_HOMEROOM, homeroom });
+export const deleteHomeroom = homeroomId => ({ type: DELETE_HOMEROOM, homeroomId });
 
 // reducer 
 const homeroomsReducer = (state = [], action) => {
@@ -15,6 +17,8 @@ const homeroomsReducer = (state = [], action) => {
       return action.homerooms;
     case ADD_HOMEROOM:
       return [...state, action.homeroom];
+    case DELETE_HOMEROOM:
+      return state.filter(({ id }) => id !== action.homeroomId);
     default:
       return state;
   }
@@ -45,13 +49,16 @@ export const postHomeroom = homeroom => {
   }
 }
 
-export const destroyHomeroom = (id, history) => {
+export const destroyHomeroom = (id, currentHistory) => {
 
-  return (dispatch) =>
+console.log(currentHistory);
+
+  return dispatch =>
     axios.delete(`/api/homerooms/${id}`)
-      .then(res => { 
-        dispatch(addHomeroom()) })
-        history.push('/homerooms')
+      .then(dispatch(deleteHomeroom(id)))
+      .then(() => {
+        currentHistory.push('/homerooms')
+      })
       .catch(console.error);
 
 }
