@@ -13,7 +13,7 @@ const SingleHomeroom = (props) => {
   return (
     <div>
     {
-      hr.teacher.length ? <h1 id='page-header'>{hr.teacher}'s Students:</h1> : null
+      hr.teacher.length ? <h1 id='page-header'>{hr.teacher}'s Homeroom:</h1> : null
     }
       <ul> 
         { students.map(student => {
