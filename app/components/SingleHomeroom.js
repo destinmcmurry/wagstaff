@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import store from '../store';
 import AddStudent from './AddStudent';
-import { deleteHomeroom } from '../reducers/homerooms';
+// import { deleteHomeroom } from '../reducers/homerooms';
 
 const SingleHomeroom = (props) => {
 
@@ -31,7 +31,7 @@ const SingleHomeroom = (props) => {
         }
         { students && !students.length && <small>There are no students in this homeroom yet.</small>}
       </ul>
-      <button id='delete-btn' onClick={deleteHomeroom(homeroom)}> ❌ Delete </button>
+      <button id='delete-btn'> ❌ Delete </button>
       <br/>
       <div id='footer-form'>
         <h3>New Student</h3>

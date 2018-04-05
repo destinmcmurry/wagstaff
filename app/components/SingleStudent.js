@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import store from '../store';
+import { destroyStudent } from '../reducers/students';
 
 const SingleStudent = (props) => {
 
-  const { studentArr } = props;
+  const { studentArr, studentId } = props;
 
   return (
     <div>
@@ -20,7 +21,7 @@ const SingleStudent = (props) => {
           )
         })
       }
-      <button id='delete-btn'> ❌ Delete </button>
+      <button id='delete-btn' onClick={()=>destroyStudent(studentId)}> ❌ Delete </button>
     </div>
   )
 
@@ -31,7 +32,8 @@ const mapState = (state, ownProps) => {
   const studentId = Number(ownProps.match.params.studentId);
 
   return {
-    studentArr: state.students.filter(student => student.id === studentId)
+    studentArr: state.students.filter(student => student.id === studentId),
+    studentId
   }
 }
 
