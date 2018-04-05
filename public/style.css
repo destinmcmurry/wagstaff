@@ -14,6 +14,13 @@
   color: white;
 }
 
+#nav-links a:hover {
+  color: orange;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
 a {
   text-decoration: none;
   color: black;
