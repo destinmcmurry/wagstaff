@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import store from '../store';
 
 const Students = (props) => {
@@ -15,14 +15,14 @@ const Students = (props) => {
             return (
               <div key={student.id}>
                 <li className='student-block'>
-                  <NavLink to={`/students/${student.id}`}>
+                  <Link to={`/students/${student.id}`}>
                     <img src={student.studentImg} />
                     <div className='block'>
                       <h1>{student.name}</h1>
                       <h4>{student.email}</h4>
                       <p>gpa: {student.gpa}</p>
                     </div>
-                  </NavLink>
+                  </Link>
                 </li>
               </div>
             )

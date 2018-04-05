@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import store from '../store';
 import AddStudent from './AddStudent';
 // import { deleteHomeroom } from '../reducers/homerooms';
@@ -18,12 +18,14 @@ const SingleHomeroom = (props) => {
             return (
             <div key={student.id}>
               <li className='student-block'>
-                <NavLink to={`/students/${student.id}`}>
+                <Link to={`/students/${student.id}`}>
                   <img src={student.studentImg} />
-                  <h1>{student.name}</h1>
-                  <h4>{student.email}</h4>
-                  <p>gpa: {student.gpa}</p>
-                </NavLink>
+                  <div>
+                    <h1>{student.name}</h1>
+                    <h4>{student.email}</h4>
+                    <p>gpa: {student.gpa}</p>
+                  </div>
+                </Link>
               </li>
             </div>
             )
@@ -31,7 +33,7 @@ const SingleHomeroom = (props) => {
         }
         { students && !students.length && <small>There are no students in this homeroom yet.</small>}
       </ul>
-      <button id='delete-btn'> ❌ Delete </button>
+      <button id='delete-btn'> ❌ Delete Homeroom </button>
       <br/>
       <div id='footer-form'>
         <h3>New Student</h3>

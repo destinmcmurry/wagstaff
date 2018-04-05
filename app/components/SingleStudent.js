@@ -21,7 +21,7 @@ const SingleStudent = (props) => {
           )
         })
       }
-      <button id='delete-btn' onClick={()=>destroyStudent(studentId)}> ❌ Delete </button>
+      <button id='delete-btn' onClick={()=>destroyStudent(studentId)}> ❌ Delete Student </button>
     </div>
   )
 
