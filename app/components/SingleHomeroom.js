@@ -3,16 +3,18 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import store from '../store';
 import AddStudent from './AddStudent';
-// import { deleteHomeroom } from '../reducers/homerooms';
+import { destroyHomeroom } from '../reducers/homerooms';
 
 const SingleHomeroom = (props) => {
 
-  const { students, homeroom, homeroomId } = props;
+  const { handleClick, students, homeroom, homeroomId } = props;
   const hr = homeroom[0] || { teacher: '' };
 
   return (
     <div>
-    <h1 id='page-header'>{hr.teacher}'s Students</h1>
+    {
+      hr.teacher.length ? <h1 id='page-header'>{hr.teacher}'s Students:</h1> : null
+    }
       <ul> 
         { students.map(student => {
             return (
@@ -31,13 +33,13 @@ const SingleHomeroom = (props) => {
             )
           })
         }
-        { students && !students.length && <small>There are no students in this homeroom yet.</small>}
+        { students && !students.length && <small>not assigned students</small>}
       </ul>
-      <button id='delete-btn'> ❌ Delete Homeroom </button>
+      { hr.teacher.length ? <button id='delete-btn' onClick={()=>handleClick(homeroomId)}> ❌ Delete Homeroom </button> : null }
       <br/>
       <div id='footer-form'>
-        <h3>New Student</h3>
-        <AddStudent homeroomId={homeroomId}/>
+        { hr.teacher.length ? <h3>New Student</h3> : null }
+        { hr.teacher.length ? <AddStudent homeroomId={homeroomId}/> : null }
       </div>
     </div>
   )
@@ -55,4 +57,12 @@ const mapState = (state, ownProps) => {
   }
 }
 
-export default connect(mapState)(SingleHomeroom);
+const mapProps = (dispatch, ownProps) => {
+  return {
+    handleClick(homeroomId) {
+      dispatch(destroyHomeroom(homeroomId), ownProps.history);
+    }
+  }
+}
+
+export default connect(mapState, mapProps)(SingleHomeroom);

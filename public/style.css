@@ -77,16 +77,18 @@ img {
 
 #delete-btn {
   text-align: center;
-  font-size: 25px;
+  font-size: 15px;
   border-radius: 5px;
   margin: 15px;
-  padding: 25px;
+  padding: 12px;
   float: right;
 }
 
 #page-header {
   margin: 15px;
   text-align: center;
+  color: white;
+  background-color: orange;
 }
 
 #homepage-img {

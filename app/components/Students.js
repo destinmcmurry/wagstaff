@@ -9,6 +9,7 @@ const Students = (props) => {
 
   return (
     <div>
+      <h1 id='page-header'>All Students</h1>
       <ul>
         {
           students.map(student => {

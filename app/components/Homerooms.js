@@ -10,6 +10,7 @@ const Homerooms = (props) => {
 
   return (
     <div>
+    <h1 id='page-header'>All Homerooms</h1>
       <ul>
         {
           homerooms.map(homeroom => {
