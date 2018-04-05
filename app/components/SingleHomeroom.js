@@ -7,12 +7,12 @@ import AddStudent from './AddStudent';
 
 const SingleHomeroom = (props) => {
 
-  // should add a display for if there are no students that belong to the homeroom
-
   const { students, homeroom, homeroomId } = props;
+  const hr = homeroom[0] || { teacher: '' };
 
   return (
     <div>
+    <h1 id='page-header'>{hr.teacher}'s Students</h1>
       <ul> 
         { students.map(student => {
             return (
@@ -48,7 +48,7 @@ const mapState = (state, ownProps) => {
 
   return {
     students: state.students.filter(student => student.homeroomId === homeroomId),
-    homeroom: state.homerooms.find(homeroom => homeroom.id === homeroomId),
+    homeroom: state.homerooms.filter(homeroom => homeroom.id === homeroomId),
     homeroomId
   }
 }

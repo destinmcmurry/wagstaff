@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import Homepage from './Homepage';
 import Navbar from './Navbar';
 import Homerooms from './Homerooms';
 import Students from './Students';
@@ -23,11 +24,12 @@ class Main extends Component {
           <Navbar />
           <main>
             <Switch>
+              <Route exact path='/' component={Homepage}/>
               <Route exact path='/homerooms' component={Homerooms}/>
               <Route exact path='/students' component={Students}/>
               <Route path='/students/:studentId' component={SingleStudent}/>
               <Route path='/homerooms/:homeroomId' component={SingleHomeroom}/>
-              <Redirect to='/homerooms'/>
+              <Redirect to='/'/>
             </Switch>
           </main>
         </div>

@@ -76,3 +76,12 @@ img {
   padding: 25px;
   float: right;
 }
+
+#page-header {
+  margin: 15px;
+  text-align: center;
+}
+
+#homepage-img {
+  width: 100%;
+}
