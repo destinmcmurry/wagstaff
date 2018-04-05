@@ -5,12 +5,10 @@ import axios from 'axios';
 // action types
 const SET_STUDENTS = 'SET_STUDENTS';
 const ADD_STUDENT = 'ADD_STUDENT';
-const DELETE_STUDENT = 'DELETE_STUDENT';
 
 // action creators
 export const setStudents = students => ({ type: SET_STUDENTS, students });
 export const addStudent = student => ({ type: ADD_STUDENT, student });
-export const deleteStudent = () => ({ type: DELETE_STUDENT });
 
 // reducer 
 const studentsReducer = (state = [], action) => {
@@ -49,13 +47,14 @@ export const postStudent = student => {
   }
 }
 
-export const destroyStudent = id => {
+export const destroyStudent = (id, history) => {
 
-  console.log('in here');
-
-  return axios.delete(`/api/students/${id}`)
-  .then((res) => dispatch(deleteStudent()))
-  .catch(console.error);
+  return (dispatch) =>
+    axios.delete(`/api/students/${id}`)
+      .then(res => { 
+        dispatch(addStudent()) })
+        history.push('/students')
+      .catch(console.error);
 
 }
 

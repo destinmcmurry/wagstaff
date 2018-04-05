@@ -16,10 +16,8 @@ apiRouter.post('/', (req, res, next) => {
 
 apiRouter.delete('/:id', (req, res, next) => {
   return Student.destroy({ where: { id: req.params.id } })
-  // not redirecting, giving me a 404 
-    .then(res.redirect('/students/'))
+    .then(() => res.status(204).end())
     .catch(next);
-
 });
 
 module.exports = apiRouter;

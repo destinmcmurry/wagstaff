@@ -5,7 +5,7 @@ import { destroyStudent } from '../reducers/students';
 
 const SingleStudent = (props) => {
 
-  const { studentArr, studentId } = props;
+  const { handleClick, studentArr, studentId } = props;
 
   return (
     <div>
@@ -21,7 +21,7 @@ const SingleStudent = (props) => {
           )
         })
       }
-      <button id='delete-btn' onClick={()=>destroyStudent(studentId)}> ❌ Delete Student </button>
+      <button id='delete-btn' onClick={()=>handleClick(studentId)}> ❌ Delete Student </button>
     </div>
   )
 
@@ -32,9 +32,17 @@ const mapState = (state, ownProps) => {
   const studentId = Number(ownProps.match.params.studentId);
 
   return {
-    studentArr: state.students.filter(student => student.id === studentId),
+    studentArr: state.students.filter(student => student.id === studentId) || [],
     studentId
   }
 }
 
-export default connect(mapState)(SingleStudent);
+const mapProps = (dispatch, ownProps) => {
+  return {
+    handleClick(studentId) {
+      dispatch(destroyStudent(studentId), ownProps.history);
+    }
+  }
+}
+
+export default connect(mapState, mapProps)(SingleStudent);
