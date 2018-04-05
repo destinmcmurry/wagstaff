@@ -35,6 +35,7 @@ const SingleHomeroom = (props) => {
         }
         { students && !students.length && <small>not assigned students</small>}
       </ul>
+      { homeroom.length ? <button id='update-btn'> ✏️ Update Information </button> : null }
       { hr.teacher.length ? <button id='delete-btn' onClick={()=>handleClick(homeroomId)}> ❌ Delete Homeroom </button> : null }
       <br/>
       <div id='footer-form'>

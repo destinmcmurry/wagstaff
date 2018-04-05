@@ -94,3 +94,12 @@ img {
 #homepage-img {
   width: 100%;
 }
+
+#update-btn {
+  text-align: center;
+  font-size: 15px;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 12px;
+  float: left;
+}

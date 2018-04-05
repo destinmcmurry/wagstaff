@@ -5,7 +5,8 @@ import store from '../store';
 
 const Students = (props) => {
 
-  const { students } = props;
+  const { students, homerooms } = props;
+
 
   return (
     <div>
@@ -20,8 +21,11 @@ const Students = (props) => {
                     <img src={student.studentImg} />
                     <div className='block'>
                       <h1>{student.name}</h1>
-                      <h4>{student.email}</h4>
+                      <h4>email: {student.email}</h4>
                       <p>gpa: {student.gpa}</p>
+                      {
+                        homerooms.filter(homeroom => homeroom.id === student.homeroomId).length ? (<p>{(homerooms.find(homeroom => homeroom.id === student.homeroomId)).teacher}'s Homeroom</p>) : <small>not assigned a homeroom</small>
+                      }
                     </div>
                   </Link>
                 </li>
@@ -37,7 +41,8 @@ const Students = (props) => {
 
 const mapState = (state, ownProps) => {
   return {
-    students: state.students
+    students: state.students,
+    homerooms: state.homerooms
   }
 }
 

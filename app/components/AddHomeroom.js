@@ -54,7 +54,7 @@ class AddHomeroom extends Component {
         <input type='text' name='teacherImg' value={this.state.teacherImg} onChange={this.handleChange}/>
         <br/>
         <br/>
-        <button type='submit' id='add-btn'>Add Homeroom</button>
+        <button type='submit' id='add-btn'> ➕ Add Homeroom</button>
       </form>
     )
   }

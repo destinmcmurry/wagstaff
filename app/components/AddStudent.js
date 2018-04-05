@@ -64,7 +64,7 @@ class AddStudent extends Component {
         <input type='text' name='studentImg' value={this.state.studentImg} onChange={this.handleChange}/>
         <br/>
         <br/>
-        <button type='submit' id='add-btn'>Add Student</button>
+        <button type='submit' id='add-btn'> ➕ Add Student</button>
       </form>
     )
   }
