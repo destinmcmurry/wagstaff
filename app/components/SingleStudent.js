@@ -5,8 +5,6 @@ import { destroyStudent } from '../reducers/students';
 
 const SingleStudent = (props) => {
 
-// take out ternaries
-
   const { handleClick, student, studentId, homerooms } = props;
 
   return (

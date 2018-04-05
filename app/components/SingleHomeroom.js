@@ -12,12 +12,10 @@ const SingleHomeroom = (props) => {
 
   return (
     <div>
-    {
-      hr.teacher.length ? <h1 id='page-header'>{hr.teacher}'s Homeroom:</h1> : null
-    }
-      <ul> 
-        { students.map(student => {
-            return (
+      <h1 id='page-header'>{hr.teacher}'s Homeroom:</h1>
+      <ul>
+        {students.map(student => {
+          return (
             <div key={student.id}>
               <li className='student-block'>
                 <Link to={`/students/${student.id}`}>
@@ -30,17 +28,17 @@ const SingleHomeroom = (props) => {
                 </Link>
               </li>
             </div>
-            )
-          })
+          )
+        })
         }
-        { students && !students.length && <small>not assigned students</small>}
+        {students && !students.length && <small>not assigned students</small>}
       </ul>
-      { homeroom.length ? <button id='update-btn'> ✏️ Update Information </button> : null }
-      { hr.teacher.length ? <button id='delete-btn' onClick={()=>handleClick(homeroomId)}> ❌ Delete Homeroom </button> : null }
-      <br/>
+      <button id='update-btn'> ✏️ Update Information </button>
+      <button id='delete-btn' onClick={() => handleClick(homeroomId)}> ❌ Delete Homeroom </button>
+      <br />
       <div id='footer-form'>
-        { hr.teacher.length ? <h3>New Student</h3> : null }
-        { hr.teacher.length ? <AddStudent homeroomId={homeroomId}/> : null }
+        <h3>New Student</h3>
+        <AddStudent homeroomId={homeroomId} />
       </div>
     </div>
   )
