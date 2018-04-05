@@ -15,7 +15,7 @@ const SingleStudent = (props) => {
         <p>email: {student.email}</p>
         <p>gpa: {student.gpa}</p>
         {
-          homerooms && homerooms.find(homeroom => student.homeroomId === homeroom.id) ? <p>{ homeroom.teacher }'s homeroom</p> : <small>not assigned a homeroom</small>
+          homerooms.filter(homeroom => homeroom.id === student.homeroomId).length ? (<p>{(homerooms.find(homeroom => homeroom.id === student.homeroomId)).teacher}'s Homeroom</p>) : <small>not assigned a homeroom</small>
         }
         <br/>
       </div>
@@ -33,7 +33,7 @@ const mapState = (state, ownProps) => {
 
   return {
     student: state.students.find(student => student.id === studentId) || {},
-    homeroom: state.homerooms,
+    homerooms: state.homerooms,
     studentId
   }
 }
