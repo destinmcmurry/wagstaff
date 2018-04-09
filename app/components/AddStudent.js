@@ -47,11 +47,13 @@ class AddStudent extends Component {
         <br/>
         <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange}/>
         { this.state.dirties.firstName && !this.state.firstName ? <div className="alert-warning">Please enter a first name</div> : null }
+        { this.state.firstName.length > 15 ? <div className="alert-warning">That name is too long</div> : null }
         <br/>
         Last Name:
         <br/>
         <input type='text' name='lastName' value={this.state.lastName} onChange={this.handleChange}/>
         { this.state.dirties.lastName && !this.state.lastName ? <div className="alert-warning">Please enter a last name</div> : null }
+        { this.state.lastName.length > 15 ? <div className="alert-warning">That name is too long</div> : null }
         <br/>
         gpa:
         <br/>

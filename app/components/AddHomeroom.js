@@ -45,12 +45,14 @@ class AddHomeroom extends Component {
         <br/>
         <input type='text' name='teacher' value={this.state.teacher} onChange={this.handleChange}/>
         { this.state.dirties.teacher && !this.state.teacher ? <div className="alert-warning">Please enter a teacher</div> : null }
+        { this.state.teacher.length > 15 ? <div className="alert-warning">That name is too long</div> : null }
         <br/>
         Room Number:
         <br/>
         <input type='text' name='roomNumber' value={this.state.roomNumber} onChange={this.handleChange}/>
         { this.state.dirties.roomNumber && !this.state.roomNumber ? <div className="alert-warning">Please enter a room number</div> : null }
-        { this.state.roomNumber && (this.state.roomNumber.length > 3) ? <div className="alert-warning">Please enter a valid room number</div> : null }
+        { this.state.roomNumber && (this.state.roomNumber.length > 3) ? <div className="alert-warning">That room does not exist</div> : null }
+        { this.state.roomNumber && Number.isNaN(parseInt(this.state.roomNumber)) ? <div className="alert-warning">Please enter a valid room number</div> : null }
         <br/>
         Image Url:
         <br/>
