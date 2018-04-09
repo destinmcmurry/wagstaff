@@ -12,7 +12,7 @@ class AddStudent extends Component {
       lastName: '',
       gpa: '',
       studentImg: '',
-      diabled: true
+      disabled: true
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -21,7 +21,7 @@ class AddStudent extends Component {
     if (event.target.name === 'firstName') this.setState({dirties: { firstName: true }})
     if (event.target.name === 'lastName') this.setState({dirties: { lastName: true }})
     if (event.target.name === 'gpa') this.setState({dirties: { gpa: true }})
-    if (this.state.dirties.firstName && this.state.dirties.lastName && this.state.dirties.gpa) this.setState({disabled: false})
+    if (this.state.firstName && this.state.lastName && this.state.gpa) this.setState({ disabled: false })
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -57,14 +57,14 @@ class AddStudent extends Component {
         <br/>
         <input type='text' name='gpa' value={this.state.gpa} onChange={this.handleChange}/>
         { this.state.dirties.gpa && !this.state.gpa ? <div className="alert-warning">Please enter a gpa</div> : null }
-        { this.state.gpa && (Number(this.state.gpa) < 0 || Number(this.state.gpa) > 4) ? <div className="alert-warning">Please enter a valid gpa</div> : null }
+        { this.state.gpa && (Number.isNaN(parseInt(this.state.gpa)) || Number(this.state.gpa) < 0 || Number(this.state.gpa) > 4) ? <div className="alert-warning">Please enter a valid gpa</div> : null }
         <br/>
         Image Url:
         <br/>
         <input type='text' name='studentImg' value={this.state.studentImg} onChange={this.handleChange}/>
         <br/>
         <br/>
-        <button type='submit' id='add-btn'> ➕ Add Student</button>
+        <button type='submit' id='add-btn' disabled={this.state.disabled}> ➕ Add Student</button>
       </form>
     )
   }

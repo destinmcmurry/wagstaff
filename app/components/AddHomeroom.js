@@ -10,7 +10,8 @@ class AddHomeroom extends Component {
       dirties: { teacher: false, roomNumber: false },
       teacher: '',
       roomNumber: '',
-      teacherImg: ''
+      teacherImg: '',
+      disabled: true
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -18,6 +19,7 @@ class AddHomeroom extends Component {
   handleChange (event) {
     if (event.target.name === 'teacher') this.setState({dirties: { teacher: true }})
     if (event.target.name === 'roomNumber') this.setState({dirties: { roomNumber: true }})
+    if (this.state.teacher && this.state.roomNumber) this.setState({ disabled: false })
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -35,7 +37,8 @@ class AddHomeroom extends Component {
             dirties: { teacher: false, roomNumber: false },
             teacher: '',
             roomNumber: '',
-            teacherImg: ''
+            teacherImg: '',
+            disabled: true
           })
         }}>
         Teacher Name:
@@ -54,7 +57,7 @@ class AddHomeroom extends Component {
         <input type='text' name='teacherImg' value={this.state.teacherImg} onChange={this.handleChange}/>
         <br/>
         <br/>
-        <button type='submit' id='add-btn'> ➕ Add Homeroom</button>
+        <button type='submit' id='add-btn' disabled={this.state.disabled}> ➕ Add Homeroom</button>
       </form>
     )
   }
