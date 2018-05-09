@@ -51,8 +51,6 @@ export const postHomeroom = homeroom => {
 
 export const destroyHomeroom = (id, currentHistory) => {
 
-console.log(currentHistory);
-
   return dispatch =>
     axios.delete(`/api/homerooms/${id}`)
       .then(dispatch(deleteHomeroom(id)))

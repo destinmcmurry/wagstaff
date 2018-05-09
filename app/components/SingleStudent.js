@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import store from '../store';
 import { destroyStudent } from '../reducers/students';
 
+// can use placeholder attribute for update student form!
+
 const SingleStudent = (props) => {
 
   const { handleClick, student, studentId, homerooms } = props;
