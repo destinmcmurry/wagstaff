@@ -6,7 +6,7 @@ A mobile repsonsive single page application for managing a database of students 
                         landing page
 ![alt text](/public/images/display2.png)
                       all homerooms page
-![alt text](/public/images/display2.png)
+![alt text](/public/images/display3.png)
                      single homeroom page
 
 
