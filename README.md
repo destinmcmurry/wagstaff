@@ -2,11 +2,11 @@
 
 A mobile repsonsive single page application for managing a database of students and homerooms at Wagstaff!
 
-![alt text](https://raw.githubusercontent.com/destinmcmurry/wagstaff-elementary/master/public/images/display1.png)
+![alt text](/public/images/display1.png)
 
-![alt text](https://raw.githubusercontent.com/destinmcmurry/wagstaff-elementary/master/public/images/display2.png)
+![alt text](/public/images/display2.png)
 
-![alt text](https://raw.githubusercontent.com/destinmcmurry/wagstaff-elementary/master/public/images/display3.png)
+![alt text](/public/images/display3.png)
 
 # Senior Enrichment Project Guidelines
 
