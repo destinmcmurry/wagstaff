@@ -3,11 +3,8 @@
 A mobile repsonsive single page application for managing a database of students and homerooms at Wagstaff!
 
 ![alt text](/public/images/display1.png)
-                        landing page
 ![alt text](/public/images/allhomerooms.png)
-                      all homerooms page
 ![alt text](/public/images/display3.png)
-                     single homeroom page
 
 
 # Senior Enrichment Project Guidelines
